@@ -2,16 +2,17 @@
 # coding: utf-8
 
 # # Virtual Lesion
-# This series of notebooks (Step 2 to 3) calculates the likeliness of the existens of a fiber bundle with LiFEs Virtual Lesion approach<sup>[1]</sup>. The probability will be defined based on the Strength of Evidence.
+# This series of notebooks is used to determine the evidence for a pathway connecting two ROIs following those described in Pestilli et al.<sup>[1]</sup> and Leong et al.<sup>[2]</sup>.
 # 
-# Steps of this notebook:
+# Calculation steps done in this notebook:
 # 
 # <ol>
 #     <li>Calculating the normalized difference of the two RMSEs provides the Strength of Evidence</li>
 #     <li>Save the LiFE optimized candidate streamlines between the two ROIs</li>
 # </ol>
 # 
-# <sup>[1]</sup> <i>Pestilli et al. [PMID: 25194848] and Leong et al. [PMID: 26748088]</i>
+# <sup>[1]</sup> <i>PMID: 25194848</i> <br/>
+# <sup>[2]</sup> <i>PMID: 26748088</i> <br/>
 
 # In[6]:
 

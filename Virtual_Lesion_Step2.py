@@ -2,21 +2,22 @@
 # coding: utf-8
 
 # # Virtual Lesion
-# This series of notebooks (Step 2 to 3) calculates the likeliness of the existens of a fiber bundle with LiFEs Virtual Lesion approach<sup>[1]</sup>. The probability will be defined based on the Strength of Evidence.
+# This series of notebooks is used to determine the evidence for a pathway connecting two ROIs following those described in Pestilli et al.<sup>[1]</sup> and Leong et al.<sup>[2]</sup>.
 # 
-# Steps of this notebook:
+# Calculation steps done in this notebook:
 # 
 # <ol>
 #     <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
-#     <li>Find fibers in whole brain fiber track that pass through the neibghorhood</li>
+#     <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
 #     <li>Combine whole brain connectome with candidate streamlines into one steamline set</li>
-#     <li>Run the LiFE Optimization on this combined streamline set and retrieve RMSE between the original data set and the LiFE prediction</li>
-#     <li>Run the LiFE Optimization and RMSE calculation again on the whole brain, but this time without the candidate streamlines</li>
+#     <li>Run the LiFE optimization on this combined streamline set and retrieve RMSE between the original data set and the LiFE prediction</li>
+#     <li>Run the LiFE otimization and RMSE calculation again on the whole brain, but this time without the candidate streamlines</li>
 # </ol>
 # 
-# **<small>Do not run the parallization of all cores. This notebook is parallalized by subjects. Each process needs a lot of memory.</small>
+# **<small>Do not run the parallization on all cores. This notebook is parallalized by subjects. The limiting factor is the memory usage per process.</small>
 # 
-# <sup>[1]</sup> <i>Pestilli et al. [PMID: 25194848] and Leong et al. [PMID: 26748088]</i>
+# <sup>[1]</sup> <i>PMID: 25194848</i> <br/>
+# <sup>[2]</sup> <i>PMID: 26748088</i> <br/>
 
 # In[1]:
 

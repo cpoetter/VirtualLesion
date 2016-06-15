@@ -2,8 +2,18 @@
 # coding: utf-8
 
 # # Virtual Lesion
-
-# This series of Notebooks (Step 1 to 3) calculate the likeliness of the existens of a fiber bundle with LiFEs Virtual Lesion approach. The probability will be difined based on the Strength of Evidence.
+# This series of notebooks (Step 1 to 3) calculates the likeliness of the existens of a fiber bundle with LiFEs Virtual Lesion approach<sup>[1]</sup>. The probability will be defined based on the Strength of Evidence.
+# 
+# Steps of this notebook:
+# 
+# <ol>
+#     <li>Generate fiber tracks with MRtrix3 from ROI1 to ROI2 and vise versa</li>
+#     <li>Remove fibers which pass through the ROIs, but do not stop in them</li>
+#     <li>Combine all valid fiber tracks into one streamline set</li>
+#     <li>Cluster the streamlines with dipys QuickBundles algorithm to remove outliers</li>
+# </ol>
+# 
+# <sup>[1]</sup> <i>Pestilli et al. [PMID: 25194848] and Leong et al. [PMID: 26748088]</i>
 
 # In[3]:
 
@@ -97,18 +107,14 @@ for subject in subjects_sorted:
 
                         major_cluster = clusters > 60
                         major_path = []
-                        #centroids = []
                         for j in range(len(clusters)):
                             if major_cluster[j] == True:
                                 major_path.append([streamlines[i] for i in clusters[j].indices])
-                        #        centroids.append(clusters[j].centroid)  
                         major_streams = list(itertools.chain(*major_path))
 
                         strm = ((sl, None, None) for sl in major_streams)
                         tv.write(f_out_clustered, strm,  hdr_mapping=hdr)
                         
-                        #strm_centroids = ((sl, None, None) for sl in centroids)
-                        #tv.write(f_out_centroids, strm_centroids,  hdr_mapping=hdr)
                         print '    All done'
                         
                     except:

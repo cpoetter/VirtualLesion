@@ -1,6 +1,8 @@
 # Virtual Lesion
 This series of notebooks is used to determine the evidence for a pathway connecting two ROIs following those described in Pestilli et al.<sup>[1]</sup> and Leong et al.<sup>[2]</sup>.
 
+![alt tag](https://raw.githubusercontent.com/cpoetter/VirtualLesion/master/Example_screenshot.png)
+
 Required steps before running these notebooks:
 
 <ol>

@@ -12,10 +12,12 @@ Required steps before running these notebooks:
 Calculation steps done in these notebooks:
 
 <ol>
+    <ol>
     <li>Generate fiber tracks by seeding from ROI1 and selecting only those that pass through ROI2, and vise versa, with MRtrix3</li>
     <li>Remove the fibers from the previous step that do not start in one ROI and end in the other (The fibers that pass through the ROIs but do not terminate in them)</li>
     <li>Combine all valid fiber tracks into one candiadate streamline set</li>
     <li>Cluster the candiadate streamlines with the dipy<sup>[6]</sup> QuickBundles algorithm<sup>[7]</sup> to remove outliers</li>
+    </ol>
     <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
     <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
     <li>Combine whole brain connectome with candidate streamlines into one steamline set</li>

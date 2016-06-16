@@ -23,9 +23,9 @@ Calculation steps done in these notebooks:
     <li>Virtual_Lesion_Step2
         <ol>
             <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
-            <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
+            <li>Find fibers in the whole brain connectome that pass through the neighborhood</li>
             <li>Combine whole brain connectome with candidate streamlines into one steamline set</li>
-            <li>Run the LiFE optimization on this combined streamline set and retrieve RMSE between the original data set and the LiFE prediction</li>
+            <li>Run the LiFE optimization on this combined streamline set and retrieve RMSE between the original diffusion data set and the LiFE prediction</li>
             <li>Run the LiFE otimization and RMSE calculation again on the whole brain, but this time without the candidate streamlines</li>
         </ol>
     </li>

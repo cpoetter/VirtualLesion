@@ -13,25 +13,31 @@ Calculation steps done in these notebooks:
 
 <ol>
     <li>Virtual_Lesion_Step1</li>
-    <ol>
-        <li>Generate fiber tracks by seeding from ROI1 and selecting only those that pass through ROI2, and vise versa, with MRtrix3</li>
-        <li>Remove the fibers from the previous step that do not start in one ROI and end in the other (The fibers that pass through the ROIs but do not terminate in them)</li>
-        <li>Combine all valid fiber tracks into one candiadate streamline set</li>
-        <li>Cluster the candiadate streamlines with the dipy<sup>[6]</sup> QuickBundles algorithm<sup>[7]</sup> to remove outliers</li>
-    </ol>
+    <li>
+        <ol>
+            <li>Generate fiber tracks by seeding from ROI1 and selecting only those that pass through ROI2, and vise versa, with MRtrix3</li>
+            <li>Remove the fibers from the previous step that do not start in one ROI and end in the other (The fibers that pass through the ROIs but do not terminate in them)</li>
+            <li>Combine all valid fiber tracks into one candiadate streamline set</li>
+            <li>Cluster the candiadate streamlines with the dipy<sup>[6]</sup> QuickBundles algorithm<sup>[7]</sup> to remove outliers</li>
+        </ol>
+    </li>
     <li>Virtual_Lesion_Step2</li>
-    <ol>
-        <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
-        <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
-        <li>Combine whole brain connectome with candidate streamlines into one steamline set</li>
-        <li>Run the LiFE optimization on this combined streamline set and retrieve RMSE between the original data set and the LiFE prediction</li>
-        <li>Run the LiFE otimization and RMSE calculation again on the whole brain, but this time without the candidate streamlines</li>
-    </ol>
+    <li>
+        <ol>
+            <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
+            <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
+            <li>Combine whole brain connectome with candidate streamlines into one steamline set</li>
+            <li>Run the LiFE optimization on this combined streamline set and retrieve RMSE between the original data set and the LiFE prediction</li>
+            <li>Run the LiFE otimization and RMSE calculation again on the whole brain, but this time without the candidate streamlines</li>
+        </ol>
+    </li>
     <li>Virtual_Lesion_Step3</li>
-    <ol>
-        <li>Calculating the normalized difference of the two RMSEs provides the Strength of Evidence</li>
-        <li>Save the LiFE optimized candidate streamlines between the two ROIs</li>
-    </ol>
+    <li>
+        <ol>
+            <li>Calculating the normalized difference of the two RMSEs provides the Strength of Evidence</li>
+            <li>Save the LiFE optimized candidate streamlines between the two ROIs</li>
+        </ol>
+    </li>
 </ol>
 
 **<small>Do not run the parallization on all cores. This notebook is parallalized by subjects. The limiting factor is the memory usage per process.</small>

@@ -13,7 +13,7 @@ Calculation steps done in these notebooks:
 
 <ol>
     <li>Virtual_Lesion_Step1</li>
-    <li>
+    <li>Virtual_Lesion_Step1
         <ol>
             <li>Generate fiber tracks by seeding from ROI1 and selecting only those that pass through ROI2, and vise versa, with MRtrix3</li>
             <li>Remove the fibers from the previous step that do not start in one ROI and end in the other (The fibers that pass through the ROIs but do not terminate in them)</li>
@@ -22,7 +22,7 @@ Calculation steps done in these notebooks:
         </ol>
     </li>
     <li>Virtual_Lesion_Step2</li>
-    <li>
+    <li>Virtual_Lesion_Step2
         <ol>
             <li>Calculate the neighborhood of the candidate streamlines (Voxels where the streamlines pass through)</li>
             <li>Find fibers in the whole brain connectome that pass through the neibghorhood</li>
@@ -32,7 +32,7 @@ Calculation steps done in these notebooks:
         </ol>
     </li>
     <li>Virtual_Lesion_Step3</li>
-    <li>
+    <li>Virtual_Lesion_Step3
         <ol>
             <li>Calculating the normalized difference of the two RMSEs provides the Strength of Evidence</li>
             <li>Save the LiFE optimized candidate streamlines between the two ROIs</li>
